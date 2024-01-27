@@ -58,7 +58,7 @@ let EmailInp = document.getElementById('emailInp');
 let PassInp = document.getElementById('passwordInp');
 let MainForm = document.getElementById('MainForm');
 
-let signInUser = evt => {
+let SignInUser = evt => {
   evt.preventDefault();
 
   signInWithEmailAndPassword(auth, EmailInp.value, PassInp.value)
@@ -73,7 +73,7 @@ let signInUser = evt => {
     });
 };
 
-MainForm.addEventListener('submit', signInUser);
+MainForm.addEventListener('submit', SignInUser);
 
     </script>
   
