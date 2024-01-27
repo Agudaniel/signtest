@@ -34,7 +34,7 @@
       </div>
 
       <div class="container signin">
-        <p>Already have an account? .</p><button type="submit"><a href="login.html">Sign in</a></button>
+        <p>Already have an account? .</p><button type="button"><a href="login.html">Sign in</a></button>
       </div>
     </form>
 
@@ -71,7 +71,12 @@ let RegisterUser = evt => {
   createUserWithEmailAndPassword(auth, EmailInp.value, PassInp.value)
     .then((userCredential) => {
       // The user is successfully registered
-      console.log(userCredential.user);
+      // console.log(userCredential.user);
+      set(ref(db, 'UsersAuthList/' + credentials.user.uid),{
+        firstname: FnameInp.value,
+        lastname: LnameInp.value,
+
+      })
     })
     .catch((error) => {
       alert(error.message);
