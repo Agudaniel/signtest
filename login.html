@@ -65,6 +65,8 @@ let SignInUser = evt => {
     .then((userCredential) => {
       // The user is successfully registered
       // console.log(userCredential.user);
+      const user = userCredential.user;
+
       get(child(dbref, 'UsersAuthList/' + user.uid)).then((snapshot) => {
         if(snapshot.exists()) {
           sessionStorage.setItem("user-info", JSON.stringify({
@@ -72,7 +74,7 @@ let SignInUser = evt => {
               lastname: snapshot.val().lastname,
           }))
           sessionStorage.setItem("user-creds", JSON.stringify(user));
-          window.location.href = 'home.html';
+          window.location.href = 'home.html';  // Fix: Change 'ref' to 'href'
         }
       })
     })
