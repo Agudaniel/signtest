@@ -72,7 +72,7 @@ let RegisterUser = evt => {
     .then((userCredential) => {
       // The user is successfully registered
       // console.log(userCredential.user);
-      set(ref(db, 'UsersAuthList/' + userCredentials.user.uid),{
+      set(ref(db, 'UsersAuthList/' + userCredential.user.uid),{
         firstname: FnameInp.value,
         lastname: LnameInp.value,
 
